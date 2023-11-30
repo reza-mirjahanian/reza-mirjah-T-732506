@@ -4,7 +4,7 @@ using Maximum.Services;
 
 public class UnitTestGenerateTriangleFromFileService
 {
-    
+
     [Fact]
     public void TestShouldGenerate100Row()
     {
@@ -12,7 +12,7 @@ public class UnitTestGenerateTriangleFromFileService
         var testData = generateTriangleFromFileService.Generate();
         Assert.Equal(100, testData.Length);
     }
-    
+
     [Fact]
     public void TestShouldThrowErrorWhenFileIsEmpty()
     {
@@ -20,7 +20,7 @@ public class UnitTestGenerateTriangleFromFileService
         var ex = Assert.Throws<ArgumentException>(() => generateTriangleFromFileService.Generate());
         Assert.Equal("Input file is empty!, TestInputs\\TriangleEmpty.txt", ex.Message);
     }
-    
+
     [Fact]
     public void TestShouldThrowErrorWhenFileIsInvalid()
     {
@@ -28,14 +28,14 @@ public class UnitTestGenerateTriangleFromFileService
         var ex = Assert.Throws<ArgumentException>(() => generateTriangleFromFileService.Generate());
         Assert.Equal("Invalid triangle data!, TestInputs\\TriangleInvalid.txt", ex.Message);
     }
-    
-        
+
+
     [Fact]
     public void TestShouldThrowErrorWhenFileNotExist()
     {
         var generateTriangleFromFileService = new GenerateTriangleFromFileService("TestInputs\\notExist.txt");
         Assert.Throws<FileNotFoundException>(() => generateTriangleFromFileService.Generate());
-   
+
     }
 
 

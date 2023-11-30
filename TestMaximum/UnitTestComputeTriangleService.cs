@@ -27,7 +27,7 @@ public class UnitTestComputeTriangleService
         var testData = generateTriangleFromFileService.Generate();
         Assert.Equal(732506, computeTriangleService.ComputeMax(testData));
     }
-    
+
     //@todo test empty, 1, 2 rows!
 
 }
