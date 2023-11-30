@@ -13,6 +13,7 @@
 - ✅ REST API to return the maximum total from top to bottom
 - ✅ Implemented in .NET C#
 - ✅ Includes unit tests
+- ✅ Have fun with https://github.com/nektos/act
 
 
 
