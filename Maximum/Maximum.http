@@ -1,0 +1,6 @@
+@Maximum_HostAddress = http://localhost:5184
+
+GET {{Maximum_HostAddress}}/api/maximum/
+Accept: application/json
+
+###
