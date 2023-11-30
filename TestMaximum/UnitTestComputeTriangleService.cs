@@ -23,7 +23,7 @@ public class UnitTestComputeTriangleService
     public void TestShouldComputeMaxFor100RowsCorrectly()
     {
         var computeTriangleService = new ComputeTriangleService();
-        var generateTriangleFromFileService = new GenerateTriangleFromFileService("TestInputs\\Triangle.txt");
+        var generateTriangleFromFileService = new GenerateTriangleFromFileService("TestInputs/Triangle.txt");
         var testData = generateTriangleFromFileService.Generate();
         Assert.Equal(732506, computeTriangleService.ComputeMax(testData));
     }
