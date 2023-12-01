@@ -5,6 +5,40 @@ using Maximum.Services;
 public class UnitTestComputeTriangleService
 {
     [Fact]
+    public void TestShouldComputeMaxFor0RowsCorrectly()
+    {
+        var computeTriangleService = new ComputeTriangleService();
+        var testData = new[]
+        {
+            new int[] {  }
+        };
+        Assert.Equal(0, computeTriangleService.ComputeMax(testData));
+    }
+    
+    [Fact]
+    public void TestShouldComputeMaxFor1RowsCorrectly()
+    {
+        var computeTriangleService = new ComputeTriangleService();
+        var testData = new[]
+        {
+            new[] { 50 }
+        };
+        Assert.Equal(50, computeTriangleService.ComputeMax(testData));
+    }
+    
+    [Fact]
+    public void TestShouldComputeMaxFor2RowsCorrectly()
+    {
+        var computeTriangleService = new ComputeTriangleService();
+        var testData = new[]
+        {
+            new[] { 5 },
+            new[] { 9, 15 },
+        };
+        Assert.Equal(20, computeTriangleService.ComputeMax(testData));
+    }
+    
+    [Fact]
     public void TestShouldComputeMaxFor5RowsCorrectly()
     {
         var computeTriangleService = new ComputeTriangleService();
@@ -28,6 +62,5 @@ public class UnitTestComputeTriangleService
         Assert.Equal(732506, computeTriangleService.ComputeMax(testData));
     }
 
-    //@todo test empty, 1, 2 rows!
 
 }
