@@ -8,36 +8,26 @@ public class UnitTestComputeTriangleService
     public void TestShouldComputeMaxFor0RowsCorrectly()
     {
         var computeTriangleService = new ComputeTriangleService();
-        var testData = new[]
-        {
-            new int[] {  }
-        };
+        var testData = new[] { new int[] { } };
         Assert.Equal(0, computeTriangleService.ComputeMax(testData));
     }
-    
+
     [Fact]
     public void TestShouldComputeMaxFor1RowsCorrectly()
     {
         var computeTriangleService = new ComputeTriangleService();
-        var testData = new[]
-        {
-            new[] { 50 }
-        };
+        var testData = new[] { new[] { 50 } };
         Assert.Equal(50, computeTriangleService.ComputeMax(testData));
     }
-    
+
     [Fact]
     public void TestShouldComputeMaxFor2RowsCorrectly()
     {
         var computeTriangleService = new ComputeTriangleService();
-        var testData = new[]
-        {
-            new[] { 5 },
-            new[] { 9, 15 },
-        };
+        var testData = new[] { new[] { 5 }, new[] { 9, 15 }, };
         Assert.Equal(20, computeTriangleService.ComputeMax(testData));
     }
-    
+
     [Fact]
     public void TestShouldComputeMaxFor5RowsCorrectly()
     {
@@ -57,10 +47,10 @@ public class UnitTestComputeTriangleService
     public void TestShouldComputeMaxFor100RowsCorrectly()
     {
         var computeTriangleService = new ComputeTriangleService();
-        var generateTriangleFromFileService = new GenerateTriangleFromFileService("TestInputs/Triangle.txt");
+        var generateTriangleFromFileService = new GenerateTriangleFromFileService(
+            "TestInputs/Triangle.txt"
+        );
         var testData = generateTriangleFromFileService.Generate();
         Assert.Equal(732506, computeTriangleService.ComputeMax(testData));
     }
-
-
 }

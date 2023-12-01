@@ -14,12 +14,14 @@
 - ✅ Implemented in .NET C#.
 - ✅ Includes unit tests.
 - ✅ Includes a GitHub Actions workflow.
+- ✅ Format files with https://csharpier.com/
 - ✅ Have fun with https://github.com/nektos/act
 
 
 
 #### Todo:
 
+- 💡 Allow uploading of the "triangle.txt" file through the API.
 - 💡 Improve testing (E2E, ...)
 - 💡 Improve validation.
 - 💡 Improve naming convention.
