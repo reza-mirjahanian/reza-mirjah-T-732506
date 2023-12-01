@@ -1,7 +1,8 @@
 namespace Maximum.Services;
 
-public class GenerateTriangleFromFileService(string path = GenerateTriangleFromFileService.InputsTriangleTxt)
-    : IGenerateTriangleService
+public class GenerateTriangleFromFileService(
+    string path = GenerateTriangleFromFileService.InputsTriangleTxt
+) : IGenerateTriangleService
 {
     private const string InputsTriangleTxt = "Inputs/Triangle.txt";
 

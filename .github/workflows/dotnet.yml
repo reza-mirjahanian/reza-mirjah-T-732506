@@ -8,17 +8,33 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup .NET
+      - uses: actions/checkout@v3
+      - name: Set up .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 8.0.x
-      - name: Install dependencies
+      - name: Restore dependencies
         run: dotnet restore
       - name: Build
-        run: dotnet build 
-      - name: Test with the dotnet CLI
-        run: dotnet test 
+        run: dotnet build --no-restore
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
+
+  analyze:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Analyze
+        run: dotnet build /p:EnableNETAnalyzers=true /p:AnalysisMode=AllEnabledByDefault
