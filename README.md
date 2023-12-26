@@ -11,7 +11,7 @@
 #### Done:
 
 - ✅ REST API to return the maximum total from top to bottom.
-- ✅ Implemented in .NET C#.
+- ✅ Implemented in .NET C#
 - ✅ Includes unit tests.
 - ✅ Includes a GitHub Actions workflow.
 - ✅ Format files with https://csharpier.com/
